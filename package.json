@@ -3,7 +3,11 @@
 	"description": "Generate an identify profile for a server/machine.",
 	"version": "0.0.1",
 	"license": "MIT",
-	"repository": "https://github.com/perry-mitchell/server-profile.git",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/perry-mitchell/server-profile.git"
+	},
+	"main": "source/app.js",
 	"dependencies": {
 		"external-ip":			"0.2.x",
 		"getmac":				"1.0.x",

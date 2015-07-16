@@ -1,6 +1,6 @@
 # Server Profile
 
-A profile generator and manager for servers.
+A nodejs profile generator and manager for servers.
 
 ## About
 
