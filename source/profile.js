@@ -37,6 +37,26 @@
 		};
 	};
 
+	// --- instance
+
+	Profile.prototype.getExternalIP = function() {
+		return this._info.extIP;
+	};
+
+	Profile.prototype.getID = function() {
+		return this._info.id;
+	};
+
+	Profile.prototype.getMac = function() {
+		return this._info.mac;
+	};
+
+	Profile.prototype.getName = function() {
+		return this._info.name;
+	};
+
+	// --- static
+
 	Profile.fromData = function(data) {
 		var profile = new Profile();
 		profile._info.name = data.name;
