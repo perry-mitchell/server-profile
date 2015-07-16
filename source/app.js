@@ -6,7 +6,12 @@
 		fs = require("fs"),
 		Profile = require("./profile.js");
 
-	var profilePath = "~",
+	// Taken from: http://stackoverflow.com/a/9081436/966338
+	function getUserHome() {
+		return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+	}
+
+	var profilePath = getUserHome(),
 		profileName = ".svrp";
 
 	var toolkit = {
@@ -15,9 +20,9 @@
 			return new Promise(function(resolve) {
 				fs.exists(profilePath + "/" + profileName, function (exists) {
 					if (exists) {
-						return Profile.loadFromFile(profilePath + "/" + profileName);
+						(resolve)(Profile.loadFromFile(profilePath + "/" + profileName));
 					} else {
-						return Profile.generate(profilePath + "/" + profileName);
+						(resolve)(Profile.generate(profilePath + "/" + profileName));
 					}
 				});
 			});
@@ -38,5 +43,3 @@
 	module.exports = toolkit;
 
 })(module);
-
-//module.exports.fetchProfile();
