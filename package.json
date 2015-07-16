@@ -1,0 +1,18 @@
+{
+	"name": "server-profile",
+	"description": "Generate an identify profile for a server/machine.",
+	"version": "0.0.1",
+	"license": "MIT",
+	"repository": "https://github.com/perry-mitchell/server-profile.git",
+	"dependencies": {
+		"external-ip":			"0.2.x",
+		"getmac":				"1.0.x",
+		"moniker":				"0.1.x",
+		"promise-polyfill":		"2.1.x"
+	},
+	"devDependencies": {
+		"grunt":				"0.4.x",
+		"grunt-contrib-jshint":	"0.11.x",
+		"load-grunt-tasks":		"3.2.x"
+	}
+}
