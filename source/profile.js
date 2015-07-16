@@ -9,6 +9,21 @@
 		sha256 = require('js-sha256').sha256,
 		Promise = require("promise-polyfill");
 
+	var cachedIP = false;
+
+	function getCachedIP(cb) {
+		if (cachedIP !== false) {
+			(cb)(undefined, cachedIP);
+		} else {
+			getIP(function(err, ip) {
+				if (!err) {
+					cachedIP = ip;
+				}
+				(cb)(err, cachedIP);
+			});
+		}
+	}
+
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min)) + min;
 	}
@@ -29,7 +44,7 @@
 		profile._info.mac = data.mac;
 		profile._info.extIP = data.extIP;
 		return new Promise(function(resolve) {
-			getIP(function(err, ip) {
+			getCachedIP(function(err, ip) {
 				if (!err) {
 					profile._info.extIP = ip;
 				}
@@ -50,7 +65,7 @@
 		});
 		return generation.then(function() {
 			return new Promise(function(resolve) {
-				getIP(function(err, ip) {
+				getCachedIP(function(err, ip) {
 					if (!err) {
 						profile._info.extIP = ip;
 					}
