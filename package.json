@@ -12,8 +12,9 @@
 		"promise-polyfill":		"2.1.x"
 	},
 	"devDependencies": {
-		"grunt":				"0.4.x",
-		"grunt-contrib-jshint":	"0.11.x",
-		"load-grunt-tasks":		"3.2.x"
+		"grunt":					"0.4.x",
+		"grunt-contrib-jshint":		"0.11.x",
+		"grunt-contrib-nodeunit":	"0.4.x",
+		"load-grunt-tasks":			"3.2.x"
 	}
 }

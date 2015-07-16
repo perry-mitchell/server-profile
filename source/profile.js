@@ -36,10 +36,10 @@
 				(resolve)(profile);
 			});
 		});
-	}
+	};
 
 	Profile.generate = function(filename) {
-		var profile = new Profile;
+		var profile = new Profile();
 		var generation = new Promise(function(resolve) {
 			getmac.getMac(function(err, macAddress) {
 				if (!err) {
